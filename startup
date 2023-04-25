@@ -1,0 +1,13 @@
+c(commander).
+c(caster).
+c(receiv).
+
+c(mysup).
+mysup:start_link().
+supervisor:which_children(
+
+commander:start_link().
+caster:start_link({local, caster_1}).
+caster:start_link({local, caster_2}).
+caster:start_link({local, caster_3}).
+receiv:start_link().
