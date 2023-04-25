@@ -23,8 +23,4 @@ jobs:
     - name: Compile
       run: ./bin.sh
     - name: Run tests
-      run: |
-        erl << EOF
-        c(commander).
-        halt().
-        EOF
+      run: erl -pa . -noshell -s mysup start_link -s gen_server cast command ok
